@@ -64,7 +64,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col justify-center justify-items-center justify-self-stretch max-w-[1240px] sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px]">
+      <div className="flex flex-col justify-center justify-items-center justify-self-stretch max-w-[1240px] w-screen sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px]">
         <div className="flex justify-center">
           {isEditing && (
             <EditTodo
@@ -74,7 +74,7 @@ export default function Home() {
             />
           )}
 
-          <div className="flex justify-center p-7 w-full m-2 dark:bg-violet-400 dark:text-slate-800">
+          <div className="flex justify-center p-7 w-full mx-2 mb-2 dark:bg-violet-400 dark:text-slate-800">
             <h1 className="text-6xl tracking-wide align-middle font-serif ">
               Todo List
             </h1>
@@ -93,7 +93,7 @@ export default function Home() {
             />
           )}
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col py-2">
           {/* <label className="m-2" htmlFor="notes">
             Notes
           </label> */}
