@@ -18,13 +18,14 @@ export const AddNewTodo = ({ addTask }: { addTask: any }) => {
   };
 
   return (
+    <>
     <form
-      className="flex justify-center place-items-center"
+      className=""
       onSubmit={handleTask}
     >
-      <div>
+      <div className="flex justify-between min-w-max p-2">
         <input
-          className="m-2 p-2 border-gray-700 border dark:bg-slate-700"
+          className="p-2 w-full border-gray-700 border dark:bg-slate-700"
           type="text"
           id="task"
           placeholder="Todo Item"
@@ -35,13 +36,14 @@ export const AddNewTodo = ({ addTask }: { addTask: any }) => {
           required
         />
         <button
-          className="p-2 border border-gray-700 px-2 hover:scale-110"
+          className=" ml-2 p-2 border px-2 hover:scale-110"
           //   onClick={() => handleTask()}
         >
           Add
         </button>
       </div>
     </form>
+    </>
   );
 };
 
