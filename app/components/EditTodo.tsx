@@ -40,9 +40,9 @@ export const EditTodo = ({
         >
           <div className="flex justify-center justify-items-center justify-self-center max-w-[1240px]">
               <form className="" onSubmit={handleTask}>
-                <div className="w-full border-2 border-green-500 flex justify-between min-w-[370px] sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px] p-2 justify-items-center">
+                <div className="w-full dark:bg-slate-700 border-2 border-green-300 flex justify-between min-w-[370px] sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px] p-2 justify-items-center">
                   <input
-                    className="p-2 w-full border-gray-700 border dark:bg-slate-700"
+                    className="p-2 w-full border-gray-100 border dark:bg-slate-700"
                     type="text"
                     id="editTask"
                     placeholder="Todo Item"
@@ -53,13 +53,13 @@ export const EditTodo = ({
                     required
                   />
                   <button
-                    className=" ml-2 p-2 border px-2 hover:scale-110"
+                    className=" ml-2 p-2 border border-green-400 px-2 hover:scale-110 dark:bg-slate-700"
                     //   onClick={() => handleTask()}
                   >
                     Update
                   </button>
                   <button
-                    className=" ml-2 p-2 border px-2 hover:scale-110"
+                    className=" ml-2 p-2 border px-2 hover:scale-110 dark:bg-slate-700"
                     onClick={() => closeEditMode()}
                   >
                     Cancel
