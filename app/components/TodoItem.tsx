@@ -35,7 +35,7 @@ export const TodoItem = ({
     <div className="p-2">
       <li className="flex border justify-between items-center">
         {/* LeftSide */}
-        <div className="min-w-[130px] flex flex-col p-2">
+        <div className="min-w-[135px] flex flex-col p-2">
           <div className="flex justify-between">
               <label htmlFor={task.id}>In Progress:</label>
               <input
