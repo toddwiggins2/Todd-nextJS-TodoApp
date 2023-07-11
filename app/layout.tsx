@@ -6,8 +6,8 @@ import type { Metadata } from "next";
 // const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "nextJS CRUD App",
-  description: "nextJS CRUD App",
+  title: "Todd CRUD Todo App",
+  description: "nextJS CRUD Todo App",
 };
 
 export default function RootLayout({
