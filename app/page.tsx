@@ -4,6 +4,7 @@ import { TodoList } from "./components/TodoList";
 import { EditTodo } from "./components/EditTodo";
 import useLocalStorage from "./hooks/useLocalStorage";
 import { useEffect, useState } from "react";
+import TodoNotes from "./components/TodoNotes";
 
 export default function Home() {
   const [domLoaded, setDomLoaded] = useState(false);
@@ -14,6 +15,8 @@ export default function Home() {
 
   //
   const [tasks, setTasks] = useLocalStorage("react-todo.tasks", []);
+
+  const [notes, setNotes] = useLocalStorage("notes.tasks", "");
 
   const [editedTask, setEditedTask] = useState<any>(null);
   const [isEditing, setIsEditing] = useState<any>(false);
@@ -92,18 +95,7 @@ export default function Home() {
               enterEditMode={enterEditMode}
             />
           )}
-        </div>
-        <div className="flex flex-col py-2">
-          {/* <label className="m-2" htmlFor="notes">
-            Notes
-          </label> */}
-          <textarea
-            className="mx-2 p-1 dark:placeholder:text-slate-800 dark:bg-teal-200 dark:text-slate-800"
-            name="notes"
-            id="notes"
-            placeholder="Notes:"
-            rows={10}
-          />
+          <TodoNotes notes={notes} setNotes={setNotes} />
         </div>
       </div>
     </>

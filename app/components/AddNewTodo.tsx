@@ -12,6 +12,7 @@ export const AddNewTodo = ({ addTask }: { addTask: any }) => {
       id: Date.now(),
       inProgress: false,
       isDone: false,
+      
     });
 
     setTask("");
