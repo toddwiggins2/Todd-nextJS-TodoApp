@@ -64,11 +64,8 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col justify-center  justify-items-center justify-self-stretch max-w-[1240px]">
+      <div className="flex flex-col justify-center justify-items-center justify-self-stretch max-w-[1240px] sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px]">
         <div className="flex justify-center">
-          <h1 className="text-xl">My Tasklist App</h1>
-        </div>
-        <div className="">
           {isEditing && (
             <EditTodo
               editedTask={editedTask}
@@ -76,7 +73,12 @@ export default function Home() {
               closeEditMode={closeEditMode}
             />
           )}
+
+          <h1 className="text-xl">My Tasklist App</h1>
+        </div>
+        <div>
           <AddNewTodo addTask={addTask} />
+
           {tasks && domLoaded && (
             <TodoList
               tasks={tasks}

@@ -31,32 +31,38 @@ export const EditTodo = ({
 
   return (
     <>
-    <div onClick={(e:any) => {e.target === e.currentTarget && closeEditMode()}}>
-      <form
-        className="flex justify-center place-items-center"
-        onSubmit={handleTask}
-      >
-        <div>
-          <input
-            className="m-2 p-2 border-gray-700 border dark:bg-slate-700"
-            type="text"
-            id="editTask"
-            placeholder="Todo Item"
-            value={editedTaskName}
-            onInput={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setEditedTaskName(e.target.value)
-            }
-            required
-          />
-          <button
-            className="p-2 border border-gray-700 px-2 hover:scale-110"
-            //   onClick={() => handleTask()}
-          >
-            Update
-          </button>
+      <div className="absolute backdrop-blur-md">
+        <div
+          className=" bg-slate-600/20 h-screen w-screen p-2 left-0 right-0 grid items-center"
+          onClick={(e: any) => {
+            e.target === e.currentTarget && closeEditMode();
+          }}
+        >
+          <div className="flex justify-center justify-items-center justify-self-center max-w-[1240px]">
+              <form className="" onSubmit={handleTask}>
+                <div className="w-full border-2 border-green-500 flex justify-between min-w-[370px] sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px] p-2 justify-items-center">
+                  <input
+                    className="p-2 w-full border-gray-700 border dark:bg-slate-700"
+                    type="text"
+                    id="editTask"
+                    placeholder="Todo Item"
+                    value={editedTaskName}
+                    onInput={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      setEditedTaskName(e.target.value)
+                    }
+                    required
+                  />
+                  <button
+                    className=" ml-2 p-2 border px-2 hover:scale-110"
+                    //   onClick={() => handleTask()}
+                  >
+                    Update
+                  </button>
+                </div>
+              </form>
+          </div>
         </div>
-      </form>
-    </div>
+      </div>
     </>
   );
 };

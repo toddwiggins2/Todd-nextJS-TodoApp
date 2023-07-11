@@ -71,7 +71,7 @@ export const TodoItem = ({
               {task.name}
             </label>
           ) : task.inProgress ? (
-            <label className="m-2 font-bold text-green-600" htmlFor={task.id}>
+            <label className="m-2 font-bold text-green-500" htmlFor={task.id}>
               {task.name}
             </label>
           ) : (
