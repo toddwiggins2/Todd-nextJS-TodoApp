@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { AddNewTodo } from "./components/AddNewTodo";
 import { TodoList } from "./components/TodoList";
 import { EditTodo } from "./components/EditTodo";

@@ -58,6 +58,12 @@ export const EditTodo = ({
                   >
                     Update
                   </button>
+                  <button
+                    className=" ml-2 p-2 border px-2 hover:scale-110"
+                    onClick={() => closeEditMode()}
+                  >
+                    Cancel
+                  </button>
                 </div>
               </form>
           </div>
