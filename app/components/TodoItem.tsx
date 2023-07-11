@@ -35,7 +35,7 @@ export const TodoItem = ({
     <div className="p-2">
       <li className="flex border justify-between items-center">
         {/* LeftSide */}
-        <div className="min-w-[135px] flex flex-col p-2">
+        <div className="min-w-[135px] flex flex-col px-2 py-1">
           <div className="flex justify-between">
               <label htmlFor={task.id}>In Progress:</label>
               <input
@@ -83,13 +83,13 @@ export const TodoItem = ({
         {/* //RightSide */}
         <div className="flex flex-col sm:flex-row">
           <button
-            className="min-w-fit p-2 m-2 mb-0 sm:m-2 sm:mr-0 shadow-xl border hover:scale-110"
+            className=" sm:w-[60px] p-1 m-2 mb-0 sm:m-2 sm:mr-0 shadow-xl border hover:scale-110"
             onClick={() => enterEditMode(task)}
           >
             Edit
           </button>
           <button
-            className="p-2 m-2 text-red-500 shadow-xl border hover:scale-110"
+            className="sm:w-[60px] p-1 m-2 text-red-500 shadow-xl border hover:scale-110"
             onClick={() => delTask(task.id)}
           >
             Delete

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import { AddNewTodo } from "./components/AddNewTodo";
 import { TodoList } from "./components/TodoList";
 import { EditTodo } from "./components/EditTodo";
@@ -74,7 +74,11 @@ export default function Home() {
             />
           )}
 
-          <h1 className="text-xl">My Tasklist App</h1>
+          <div className="flex justify-center p-7 w-full m-2 dark:bg-violet-400 dark:text-slate-800">
+            <h1 className="text-6xl tracking-wide align-middle font-serif ">
+              Todo List
+            </h1>
+          </div>
         </div>
         <div>
           <AddNewTodo addTask={addTask} />
@@ -88,6 +92,18 @@ export default function Home() {
               enterEditMode={enterEditMode}
             />
           )}
+        </div>
+        <div className="flex flex-col">
+          {/* <label className="m-2" htmlFor="notes">
+            Notes
+          </label> */}
+          <textarea
+            className="mx-2 p-1 dark:placeholder:text-slate-800 dark:bg-teal-200 dark:text-slate-800"
+            name="notes"
+            id="notes"
+            placeholder="Notes:"
+            rows={10}
+          />
         </div>
       </div>
     </>
