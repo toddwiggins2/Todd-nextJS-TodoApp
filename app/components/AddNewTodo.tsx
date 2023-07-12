@@ -26,7 +26,7 @@ export const AddNewTodo = ({ addTask }: { addTask: any }) => {
         <div className="flex justify-between min-w-max p-2">
           {/* Input Box for task Name */}
           <input
-            className="p-2 w-full border-gray-700 border dark:bg-slate-700"
+            className="p-2 w-full dark:border-gray-700 border rounded border-black dark:bg-slate-700"
             type="text"
             id="task"
             placeholder="Todo Item"
@@ -37,7 +37,7 @@ export const AddNewTodo = ({ addTask }: { addTask: any }) => {
             required
           />
           {/* Add Button to call onSubmit above to push new item to array */}
-          <button className=" ml-2 p-2 border px-2 hover:scale-110">Add</button>
+          <button className="w-[73px] ml-2 p-2 shadow-xl rounded text-black bg-teal-400 hover:scale-110">Add</button>
         </div>
       </form>
     </>

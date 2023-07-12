@@ -38,7 +38,7 @@ export const EditTodo = ({
     <>
       <div className="absolute backdrop-blur-md">
         <div
-          className=" bg-slate-600/20 h-screen w-screen p-2 left-0 right-0 grid items-center"
+          className=" bg-slate-600/60 dark:bg-slate-600/20 h-screen w-screen p-2 left-0 right-0 grid items-center"
           //On Click to handle if the area outside the editbox is clicked
           onClick={(e: any) => {
             e.target === e.currentTarget && closeEditMode();
@@ -46,10 +46,10 @@ export const EditTodo = ({
         >
           <div className="flex justify-center justify-items-center justify-self-center max-w-[1240px]">
             <form className="" onSubmit={handleTask}>
-              <div className="w-full dark:bg-slate-700 border-2 border-green-300 flex justify-between min-w-[370px] sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px] p-2 justify-items-center">
+              <div className="w-full dark:bg-slate-700 border-2 rounded dark:border-green-300 flex justify-between min-w-[370px] sm:min-w-[580px] md:min-w-[750px] lg:min-w[976px] xl:min-w-[1080px] p-2 justify-items-center">
                 {/* Input Field, on input change update the editedTaskName state to the new value of the input */}
                 <input
-                  className="p-2 w-full border-gray-100 border dark:bg-slate-700"
+                  className="p-2 w-full rounded border-gray-100 border dark:bg-slate-700"
                   type="text"
                   id="editTask"
                   placeholder="Todo Item"
@@ -60,12 +60,12 @@ export const EditTodo = ({
                   required
                 />
                 {/* Button to update the name calls onSubmit={handleTask} because form*/}
-                <button className=" ml-2 p-2 border border-green-400 px-2 hover:scale-110 dark:bg-slate-700">
+                <button className="ml-2 p-2 border rounded text-black bg-teal-400 dark:text-white dark:border-green-400 px-2 hover:scale-110 dark:bg-slate-700">
                   Update
                 </button>
                 {/* Button to cancel out of the edit, calls closeEditMode function to set the boolean values correctly. */}
                 <button
-                  className=" ml-2 p-2 border px-2 hover:scale-110 dark:bg-slate-700"
+                  className="ml-2 p-2 border rounded bg-blue-500 text-white hover:scale-110 dark:bg-slate-700"
                   onClick={() => closeEditMode()}
                 >
                   Cancel
