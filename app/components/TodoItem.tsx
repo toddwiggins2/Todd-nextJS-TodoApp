@@ -37,15 +37,15 @@ export const TodoItem = ({
 
   return (
     <>
-      <div className="p-2">
-        <li className="flex border rounded dark:border-white border-black justify-between items-center">
+      <div className="py-0.5">
+        <li className="flex sm:flex-row border-y dark:border-white border-black justify-between items-center">
           {/* LeftSide */}
           <div className="min-w-[130px] flex flex-col px-2 py-1">
             <div className="flex justify-between my-1">
               {/* In Progress Label and input(checkbox) */}
-              <label htmlFor={task.id}>In Progress:</label>
+              <label className="" htmlFor={task.id}>In Progress:</label>
               <input
-                className=""
+                className="mt-1"
                 type="checkbox"
                 checked={inProgress}
                 name={task.name}
@@ -58,7 +58,7 @@ export const TodoItem = ({
               {/* Is Done Label and input(checkbox) */}
               <label htmlFor="isDone">Done:</label>
               <input
-                className=""
+                className="mt-1"
                 type="checkbox"
                 checked={isDone}
                 name={task.name}
