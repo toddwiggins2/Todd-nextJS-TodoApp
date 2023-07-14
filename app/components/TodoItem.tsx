@@ -50,14 +50,14 @@ export const TodoItem = ({
             <div className="flex justify-between my-1">
               {/* In Progress Label and input(checkbox) */}
               <button
-                className="m-1"
+                className=""
                 onClick={handleInProgress}
                 id={task.id}
                 name={task.name}
               >
                 <PlayCircleIcon
-                  className={`h-6 w-6 hover:scale-110 ${
-                    inProgress ? ` text-green-500` : `text-whtie`
+                  className={`h-8 w-8 hover:scale-110 ${
+                    inProgress ? `text-green-500 dark:text-teal-400` : `text-whtie`
                   } `}
                 />
               </button>
@@ -77,13 +77,13 @@ export const TodoItem = ({
             <div className="flex justify-between my-1">
               {/* Is Done Label and input(checkbox) */}
               <button
-                className="m-1"
+                className=""
                 onClick={handleIsDone}
                 id="isDone"
                 name={task.name}
               >
                 <CheckCircleIcon
-                  className={`h-6 w-6 hover:scale-110 ${
+                  className={`h-8 w-8 hover:scale-110 ${
                     isDone ? ` text-red-500` : `text-whtie`
                   } `}
                 />
