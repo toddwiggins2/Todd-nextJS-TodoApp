@@ -41,6 +41,15 @@ export const TodoItem = ({
     toggleInProgress(task.id);
   };
 
+  const handleTaskClick = (e: any) => {
+    console.log("Clicked");
+    !inProgress && !isDone
+      ? handleInProgress(e)
+      : inProgress && !isDone
+      ? handleIsDone(e)
+      : (handleInProgress(e), handleIsDone(e));
+  };
+
   return (
     <>
       <div className="py-0.5">
@@ -57,7 +66,9 @@ export const TodoItem = ({
               >
                 <PlayCircleIcon
                   className={`h-8 w-8 hover:scale-110 ${
-                    inProgress ? `text-green-500 dark:text-teal-400` : `text-whtie`
+                    inProgress
+                      ? `text-green-500 dark:text-teal-400`
+                      : `text-whtie`
                   } `}
                 />
               </button>
@@ -102,23 +113,29 @@ export const TodoItem = ({
           </div>
           {/* Middle */}
           {/* Task name. Set styling based on what boxes are checked. inProgress is bold green, Done is Red with strikethrough, untouched is normal text */}
-          <div className="flex justify-items-center justify-center justify-self-center">
+          <div
+            className="flex justify-items-center justify-center justify-self-center"
+            onClick={handleTaskClick}
+          >
             {task.isDone ? (
               <label
                 className="m-2 font-bold text-red-500 line-through decoration-auto"
-                htmlFor={task.id}
+                // htmlFor={task.id}
               >
                 {task.name}
               </label>
             ) : task.inProgress ? (
               <label
                 className="m-2 font-bold text-green-600 dark:text-teal-400"
-                htmlFor={task.id}
+                // htmlFor={task.id}
               >
                 {task.name}
               </label>
             ) : (
-              <label className="m-2" htmlFor={task.id}>
+              <label
+                className="m-2"
+                //htmlFor={task.id}
+              >
                 {task.name}
               </label>
             )}
