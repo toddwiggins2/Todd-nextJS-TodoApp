@@ -1,4 +1,5 @@
 "use client";
+import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
 
 import React, { useState } from "react";
 
@@ -90,20 +91,20 @@ export const TodoItem = ({
           </div>
           {/* //RightSide */}
           {/* Two Buttons for Edit and Delete */}
-          <div className="flex flex-col sm:flex-row">
+          <div className="flex flex-row">
             <button
-              className="sm:w-[60px] p-1 sm:p-2 m-2 mb-0 sm:m-2 sm:mr-0 shadow-xl rounded bg-blue-500 hover:scale-110"
+              className="w-[30px] h-[30px] sm:w-[35px] p-1 m-1 sm:p-2 sm:m-2 shadow-xl rounded bg-blue-500 hover:scale-110"
               //Enter Edit mode pass individual task
               onClick={() => enterEditMode(task)}
             >
-              Edit
+              <PencilIcon className="" />
             </button>
             <button
-              className="sm:w-[60px] p-1 sm:p-2 m-2 shadow-xl rounded bg-red-500 hover:scale-110"
+              className="w-[30px] sm:w-[35px] p-1 m-1 sm:p-2 sm:m-2 shadow-xl rounded bg-red-500 hover:scale-110"
               //On click delTask passes individual task ID
               onClick={() => delTask(task.id)}
             >
-              Delete
+              <TrashIcon />
             </button>
           </div>
         </li>

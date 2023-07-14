@@ -1,5 +1,21 @@
 "use client";
 import React, { useState } from "react";
+import { PlusIcon } from "@heroicons/react/24/outline";
+
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  fill="none"
+  viewBox="0 0 24 24"
+  strokeWidth={1.5}
+  stroke="currentColor"
+  className="w-6 h-6"
+>
+  <path
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    d="M12 4.5v15m7.5-7.5h-15"
+  />
+</svg>;
 
 export const AddNewTodo = ({ addTask }: { addTask: any }) => {
   //useState for task, task will be singular task to be added to tasks array
@@ -37,7 +53,9 @@ export const AddNewTodo = ({ addTask }: { addTask: any }) => {
             required
           />
           {/* Add Button to call onSubmit above to push new item to array */}
-          <button className="w-[73px] ml-2 p-2 shadow-xl rounded text-black bg-teal-400 hover:scale-110">Add</button>
+          <button className=" ml-2 p-2 shadow-xl rounded text-black bg-teal-400 hover:scale-110">
+            <PlusIcon className="h-6 w-6" />
+          </button>
         </div>
       </form>
     </>
