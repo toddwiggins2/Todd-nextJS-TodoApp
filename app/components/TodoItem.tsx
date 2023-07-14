@@ -1,5 +1,10 @@
 "use client";
-import { PencilIcon, TrashIcon } from "@heroicons/react/24/outline";
+import {
+  PencilIcon,
+  TrashIcon,
+  PlayCircleIcon,
+  CheckCircleIcon,
+} from "@heroicons/react/24/outline";
 
 import React, { useState } from "react";
 
@@ -41,24 +46,50 @@ export const TodoItem = ({
       <div className="py-0.5">
         <li className="flex sm:flex-row border-y dark:border-white border-black justify-between items-center">
           {/* LeftSide */}
-          <div className="min-w-[130px] flex flex-col px-2 py-1">
+          <div className="flex flex-col sm:flex-row ">
             <div className="flex justify-between my-1">
               {/* In Progress Label and input(checkbox) */}
-              <label className="" htmlFor={task.id}>In Progress:</label>
-              <input
-                className="mt-1"
+              <button
+                className="m-1"
+                onClick={handleInProgress}
+                id={task.id}
+                name={task.name}
+              >
+                <PlayCircleIcon
+                  className={`h-6 w-6 hover:scale-110 ${
+                    inProgress ? ` text-green-500` : `text-whtie`
+                  } `}
+                />
+              </button>
+              {/* <label className="" htmlFor={task.id}>
+                In Progress:
+              </label> */}
+              {/* <input
+                className={`mt-1`}
                 type="checkbox"
                 checked={inProgress}
                 name={task.name}
                 id={task.id}
                 onChange={handleInProgress}
                 value="In Progress"
-              ></input>
+              ></input> */}
             </div>
             <div className="flex justify-between my-1">
               {/* Is Done Label and input(checkbox) */}
-              <label htmlFor="isDone">Done:</label>
-              <input
+              <button
+                className="m-1"
+                onClick={handleIsDone}
+                id="isDone"
+                name={task.name}
+              >
+                <CheckCircleIcon
+                  className={`h-6 w-6 hover:scale-110 ${
+                    isDone ? ` text-red-500` : `text-whtie`
+                  } `}
+                />
+              </button>
+              {/* <label htmlFor="isDone">Done:</label> */}
+              {/* <input
                 className="mt-1"
                 type="checkbox"
                 checked={isDone}
@@ -66,7 +97,7 @@ export const TodoItem = ({
                 id="isDone"
                 onChange={handleIsDone}
                 value="Is Done"
-              ></input>
+              ></input> */}
             </div>
           </div>
           {/* Middle */}
@@ -80,7 +111,10 @@ export const TodoItem = ({
                 {task.name}
               </label>
             ) : task.inProgress ? (
-              <label className="m-2 font-bold text-green-600 dark:text-teal-400" htmlFor={task.id}>
+              <label
+                className="m-2 font-bold text-green-600 dark:text-teal-400"
+                htmlFor={task.id}
+              >
                 {task.name}
               </label>
             ) : (
@@ -91,16 +125,16 @@ export const TodoItem = ({
           </div>
           {/* //RightSide */}
           {/* Two Buttons for Edit and Delete */}
-          <div className="flex flex-row">
+          <div className="flex flex-col sm:flex-row">
             <button
-              className="w-[30px] h-[30px] sm:w-[35px] p-1 m-1 sm:p-2 sm:m-2 shadow-xl rounded bg-blue-500 hover:scale-110"
+              className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] p-1 m-1 sm:p-2 sm:m-2 shadow-xl rounded bg-blue-500 hover:scale-110"
               //Enter Edit mode pass individual task
               onClick={() => enterEditMode(task)}
             >
               <PencilIcon className="" />
             </button>
             <button
-              className="w-[30px] sm:w-[35px] p-1 m-1 sm:p-2 sm:m-2 shadow-xl rounded bg-red-500 hover:scale-110"
+              className="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] p-1 m-1 sm:p-2 sm:m-2 shadow-xl rounded bg-red-500 hover:scale-110"
               //On click delTask passes individual task ID
               onClick={() => delTask(task.id)}
             >
