@@ -86,7 +86,7 @@ export default function Home() {
           )}
           {/* Todo List Banner */}
           <div className="flex justify-center p-7 w-full  xl:rounded mb-2 bg-red-400 dark:bg-violet-400 dark:text-slate-800">
-            <h1 className="text-6xl tracking-wide align-middle font-serif ">
+            <h1 className="text-6xl tracking-wide align-middle font-bold uppercase ">
               Todo List
             </h1>
           </div>
